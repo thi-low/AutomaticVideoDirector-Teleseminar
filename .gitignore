@@ -1,2 +1,3 @@
 *.log*
 /Docs/*
+.DS_Store
