@@ -1,6 +1,6 @@
 Project Overview
 ====
-This is a Re-Upload of a university project (2014)
+This is a re-upload of a university project from 2014.
 
 1. Android application which extracts motion sensor data captured by a smartphone to classify the quality of a video.
 
