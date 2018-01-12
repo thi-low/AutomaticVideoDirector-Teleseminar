@@ -1,0 +1,21 @@
+<b>Play hls</b>
+<br/>
+<!--<script type="text/javascript" src="/jwplayer/jwplayer.js"></script>-->
+<script src="http://jwpsrv.com/library/sracClG9EeSmwiIACxmInQ.js"></script>
+
+<div id="container">Loading the player ...</div>
+    <script type="text/javascript">
+        jwplayer("container").setup({
+        sources: [
+            {
+                file: "http://134.155.92.184:8080/hls/bbb480.m3u8"
+            }
+        ],
+        image: "Uni_Mannheim_Siegel.png",
+        autostart: false,
+        width: 640,
+        height: 480,
+        primary: "flash",
+        androidhls: "true"
+});
+</script>

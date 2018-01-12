@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Automatic Video Director</string>
+
+    <string name="action_settings">Settings</string>
+	<string name="welcome">Welcome to the Automatic Video Director!</string>
+	
+	<string name="button_post_test">Send HTTP POST</string>
+    <string name="button_record_and_share">Record and Share</string>
+    <string name="button_is_connected">Is connected?</string>
+    
+    <string name="title_activity_display_message">Query result</string>
+    <string name="loading">Loading…</string>
+    <string name="button_http_get">Send HTTP GET</string>
+    
+    <string name="button_send">Send</string>
+    <string name="button_browse">Browse</string>
+    <string name="select_file">Select file</string>
+    
+    <string name="title_settings">Settings</string>
+    <string name="button_settings">Settings&#8230;</string>
+    <string name="server_address">Server address</string>
+    <string name="server_port">Server port</string>
+    <string name="event">Event</string>
+    <string name="delete_cookies">Delete cookies</string>
+    
+    <string name="button_capture">Capture</string>
+    <string name="button_stop">Stop</string>
+    
+    <string name="button_try_upload">Try Upload</string>
+    
+</resources>

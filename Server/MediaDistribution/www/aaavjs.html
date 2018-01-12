@@ -1,0 +1,36 @@
+<link href="video-js/video-js.css" rel="stylesheet">
+<script src="video-js/video.js"></script>
+<script src="videojs-media-sources.js"></script>
+<script src="videojs.hls.js"></script>
+<script>
+	videojs.options.flash.swf = "video-js/video-js.swf"
+</script>
+
+<h2>Pseudo HTTP Streaming</h2>
+<video id="example_video_1" class="video-js vjs-default-skin"
+	controls preload="auto" width="640" height="264"
+	poster="Uni_Mannheim_Siegel.png"
+	data-setup='{ "techOrder": ["flash"] }'>
+ 	<source src="http://134.155.92.184:8080/bbb.mp4" type='video/mp4' />
+ 	<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>
+
+<h2>RTMP Streaming</h2>
+<video id="example_video_2" class="video-js vjs-default-skin"
+	controls preload="auto" width="640" height="264"
+	poster="Uni_Mannheim_Siegel.png"
+	data-setup='{ "techOrder": ["flash"] }'>
+	<source src="rtmp://134.155.92.184:1935/vod/bbb.mp4" type='rtmp/mp4' />
+	<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" 	target="_blank">supports HTML5 video</a></p>
+</video>
+
+
+<h2>HLS Streaming application/x-mpegURL</h2>
+<video id="example_video_3" class="video-js vjs-default-skin"
+	controls preload="auto" width="640" height="264"
+	poster="Uni_Mannheim_Siegel.png"
+	data-setup=''>
+	<source src="http://134.155.92.184:8080/hls/bbb480.m3u8" type='application/x-mpegURL' />
+	<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" 	target="_blank">supports HTML5 video</a></p>
+</video>
+

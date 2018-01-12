@@ -1,0 +1,53 @@
+Compile nginx
+	mkdir nginx
+	cd nginx/
+	sudo apt-get install libpcre3-dev
+	sudo apt-get install libssl-dev
+	git clone https://github.com/arut/nginx-rtmp-module
+	wget http://nginx.org/download/nginx-1.4.3.tar.gz
+	tar zxpvf nginx-1.4.3.tar.gz
+	cd nginx-1.4.3/
+	./configure --add-module=../nginx-rtmp-module/ --with-http_ssl_module --prefix=/usr/local/nginx-streaming/
+	make
+	sudo make install
+
+Setup user, file restrictions, config
+	cd /usr/local/nginx-streaming/conf/
+	sudo mv nginx.conf nginx.conf.bak
+	sudo vim nginx.conf
+	sudo usermod -aG www-data seminar-hws2014 #will only be active after next login
+	cd /var/
+	sudo mkdir www
+	sudo mkdir videos
+	sudo chown www-data:www-data www/
+	sudo chown www-data:www-data videos/
+	sudo chmod g+w videos/
+	sudo chmod g+w www/
+	/usr/local/nginx-streaming/sbin/nginx
+
+For logging:
+	cd /usr/local/nginx-streaming/
+	sudo chown -R www-data:www-data logs/
+	sudo chmod -R g+w logs/
+
+Start with:
+    /usr/local/nginx-streaming/sbin/nginx
+Stop with:
+    kill `cat /usr/local/nginx-streaming/logs/nginx.pid`
+Check availablility
+	ps aux | grep nginx
+
+nginx.conf should be stored in /usr/loca/nginx-streaming/conf/
+www directory in /var
+
+
+sudo add-apt-repository ppa:jon-severinsson/ffmpeg
+sudo apt-get update
+sudo apt-get install ffmpeg
+
+ffmpeg -loglevel verbose -re -i /var/videos/bbb480.avi -vcodec libx264 -vprofile baseline -acodec aac -strict experimental -ar 44100 -ac 1 -f flv rtmp://localhost:1935/hlsapp/bbb480
+
+ffmpeg -loglevel verbose -re -i /var/videos/bbb480.avi -vcodec libx264 -vprofile baseline -acodec libmp3lame -ar 44100 -ac 1 -f flv rtmp://localhost:1935/hlsapp/bbb480
+ffmpeg -threads 6 -i /var/videos/bbb480.avi -c copy -vcodec libx264 -c:a libmp3lame -ar 44100 -ac 2 -f flv rtmp://localhost:1935/hlsapp/bbb480
+
+{"duration":8490,"height":144,"shaking":0,"width":176,"finish_time":"2014-10-14 16:56:56.0","name":"VID_20141014_165646.mp4"}
