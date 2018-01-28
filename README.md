@@ -3,8 +3,9 @@ Project Overview
 This is a re-upload of a university project from 2014 !!!!!!!
 
 # Possible Description
-Nowadays, smartphones are widely used for video capture. A disadvantage of these small devices compared to camcorders is the large amount of shaking in captured video. Several video stabilization algorithms have been proposed to improve the quality of shaky videos. These algorithms typically require the analysis of the pixels in each video frame and to track the objects’ positions over time. The computational effort of object tracking is very high and not applicable in smartphones.
-Smartphones may offer additional information about the captured video. Motion sensors can be used to collect data about the orientation and viewing direction. The task is to analyze the shakiness of a video and compare it to motion sensor data. The students should evaluate if motion sensor data can be used to identify problematic video segments and also apply shake-reduction algorithms using this data to stabilize them.
+Consider an event like a festival or concert with several thousand people. Many people may capture parts of the event with their smartphones. Due to the limited overall bandwidth, the upload of all videos is not possible during the event. This topic should consider the question which streams should be selected and uploaded to a central server in such a scenario.
+The students’ task is to develop an algorithm that rates the quality of a video on the fly. The algorithm should be very fast so that decisions can be made nearly in real- time. Without a decision, each device should transfer a low bandwidth stream to the server, so that a director can decide on which video to transmit in higher quality. Because video analysis algorithms take too much time on a smartphone additional motion sensor data should be used to make this decision. High quality videos (based on motion information) should then be transferred to a server as soon as the (automatic) director on the server has chosen a suitable stream.
+
 
 
 # Implemented Features
